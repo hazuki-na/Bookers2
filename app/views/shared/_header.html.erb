@@ -1,0 +1,20 @@
+<header class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container header-container">
+	<div class="navbar-left">
+	  <h1>Bookers</h1>
+	</div>
+	  <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li><a class="glyphicon glyphicon-home" href="/users/:id">Home</a></li>
+	  	  <li><a class="glyphicon glyphicon-user" href="/users">Users</a></li>
+	  	  <li><a class="glyphicon glyphicon-book" href="/books">Books</a></li>
+	  	  <li><a class="glyphicon glyphicon-log-out" href="/users/sign_out" rel="nofollow" data-method="delete">logout</a></li>
+      <% else %>
+        <li><a class="glyphicon glyphicon-home" href="/">Home</a></li>
+	  	  <li><a class="glyphicon glyphicon-link" href="/home/about">About</a></li>
+	  	  <li><a class="glyphicon glyphicon-edit" href="/users/sign_up">sign_up</a></li>
+	  	  <li><a class="glyphicon glyphicon-log-in" href="/users/sign_in">login</a></li>
+	  	<% end %>
+    </ul>
+  </div>
+</header>

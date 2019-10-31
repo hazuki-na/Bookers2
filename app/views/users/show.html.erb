@@ -1,0 +1,60 @@
+<%= render 'shared/header' %>
+
+<div class="top">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+    <p>User info</p>
+      <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg" %>
+        <table class="table">
+          <tr>
+　　        <th>name</th>
+　　        <th><%= @user.name %></th>
+　        </tr>
+　        <tr>
+　　        <th>introduction</th>
+　　        <th><%= @user.introduction %></th>
+　　      </tr>
+        </table>
+      <a class="btn btn-default glyphicon glyphicon-wrench edit_user_path" href="/users/:id/edit"></a>
+      <p>New book</p>
+      <%= form_for(@user, url: '/users') do |f| %>
+        <p>Title</p>
+        <%= f.text_field :title %>
+        <p>Opinion</p>
+        <%= f.text_area :opinion %>
+        <%= f.submit 'Create Book' %>
+      <% end %>
+    </div>
+        
+    <div class="col-lg-9">
+      <p>Books</p>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @users.present? %>
+            <% @users.each do |user| %>
+            <tr>
+              <td></td>
+              <td><%= user.title %></td>
+              <td><%= user.opinion %></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</div>
+
+</div>
+
+<%= render 'shared/footer' %>
