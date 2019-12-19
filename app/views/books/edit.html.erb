@@ -1,6 +1,17 @@
 <%= render 'shared/header' %>
 
-<h1>Books#edit</h1>
-<p>編集画面</p>
+<p>New book</p>
+
+<%= form_for(@book, url:"/book/#{@book.id}") do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Opinion</p>
+  <%= f.text_area :body %>
+  <%= f.submit 'Update Book' %>    
+<% end %>
+
+<%= link_to "Show", book_path %>
+<p>|</p>
+<%= link_to "Back", books_path %>
 
 <%= render 'shared/footer' %>

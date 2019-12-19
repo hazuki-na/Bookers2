@@ -5,12 +5,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   
   <div class="field">
-    <%= f.label :Name %><br />
-    <%= f.text_field :username, autofocus: true %>
+    <%= f.label :Name %><br/>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password %><br/>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
@@ -22,7 +22,7 @@
   <% end %>
 
   <div class="actions">
-    <input name="commit" class="btn btn-primary" type="submit" value="Log in" data-disable-with="Log in" />
+    <input name="commit" class="btn btn-primary" type="submit" value="Log in" data-disable-with="Log in"/>
   </div>
 <% end %>
 

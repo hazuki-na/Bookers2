@@ -5,15 +5,47 @@
 	</div>
 	  <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-        <li><a class="glyphicon glyphicon-home" href="/users/:id">Home</a></li>
-	  	  <li><a class="glyphicon glyphicon-user" href="/users">Users</a></li>
-	  	  <li><a class="glyphicon glyphicon-book" href="/books">Books</a></li>
-	  	  <li><a class="glyphicon glyphicon-log-out" href="/users/sign_out" rel="nofollow" data-method="delete">logout</a></li>
+        <li>
+        	<%= link_to user_path(current_user) do %>
+            <i class="fa fa-home">Home</i>
+          <% end %>
+        </li>
+	  	  <li>
+	  	  	<%= link_to users_path do %>
+            <i class="fa fa-user">Users</i>
+          <% end %>
+        </li>
+	  	  <li>
+	  	  	<%= link_to books_path do %>
+            <i class="fa fa-book">Books</i>
+          <% end %>
+	  	  </li>
+	  	  <li>
+	  	  	<%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt">logout</i>
+          <% end %>
+        </li>
       <% else %>
-        <li><a class="glyphicon glyphicon-home" href="/">Home</a></li>
-	  	  <li><a class="glyphicon glyphicon-link" href="/home/about">About</a></li>
-	  	  <li><a class="glyphicon glyphicon-edit" href="/users/sign_up">sign_up</a></li>
-	  	  <li><a class="glyphicon glyphicon-log-in" href="/users/sign_in">login</a></li>
+        <li>
+        	<%= link_to root_path do %>
+            <i class="fa fa-home">Home</i>
+          <% end %>
+        </li>
+	  	  <li>
+	  	  	<%= link_to home_about_path do %>
+            <i class="fa fa-link">About</i>
+          <% end %>
+	  	  </li>
+	  	  <li>
+	  	  	<%= link_to new_user_registration_path do %>
+            <i class="fa fa-edit">sign_up</i>
+          <% end %>
+	  	  </li>
+	  	  <li>
+	  	  	<%= link_to new_user_session_path do %>
+            <i class="fas fa-sign-in-alt">login</i>
+          <% end %>
+	  	  </li>
 	  	<% end %>
     </ul>
   </div>

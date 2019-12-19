@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'font-awesome-sass', '~> 5.4.1'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -52,3 +53,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+gem 'kaminari','~> 1.1.1'
