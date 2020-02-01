@@ -41,7 +41,10 @@ group :development, :test do
   gem 'webdrivers'
   gem 'rspec-rails'
   gem "factory_bot_rails"
+  gem 'rspec-parameterized'
   gem 'faker'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
 
 group :development do
