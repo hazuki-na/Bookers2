@@ -36,9 +36,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+end
+
+group :test do
   gem 'rspec-rails'
   gem "factory_bot_rails"
   gem 'rspec-parameterized'
