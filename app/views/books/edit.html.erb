@@ -1,16 +1,19 @@
 <%= render 'shared/header' %>
 
-<p>New book</p>
+<div class="header-space">
 
-<%= form_for(@book, url:"/book/#{@book.id}") do |f| %>
+<p>Editing Book</p>
+
+<%= form_for @book do |f| %>
+<%= render 'layouts/book_edit_error_messages', model: f.object %>
   <p>Title</p>
   <%= f.text_field :title %>
   <p>Opinion</p>
   <%= f.text_area :body %>
-  <%= f.submit 'Update Book' %>    
+  <%= f.submit 'Update Book' %>
 <% end %>
 
-<%= link_to "Show", book_path %>
+<%= link_to "Show", book_path(@book) %>
 <p>|</p>
 <%= link_to "Back", books_path %>
 

@@ -5,7 +5,7 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.6'
 # Use Puma as the app server
@@ -39,12 +39,10 @@ group :development, :test do
 end
 
 group :test do
+gem 'capybara', '>= 2.15'
   gem 'rspec-rails'
   gem "factory_bot_rails"
-  gem 'rspec-parameterized'
   gem 'faker'
-  gem 'shoulda-matchers'
-  gem 'rails-controller-testing'
 end
 
 group :development do
