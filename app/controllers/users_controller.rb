@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
   
   def currect_user
-    @book = Book.find(params[:id])
+    @user = User.find(params[:id])
     if current_user != @user
        redirect_to user_path(current_user)
     end
