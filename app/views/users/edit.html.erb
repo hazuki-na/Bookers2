@@ -6,6 +6,7 @@
   <h2 class="header-space">User info</h2>
 
   <%= form_for(@user) do |f| %>
+    <%= render 'layouts/user_edit_error_messages', model: f.object %>
   
     <div class="field user-form user-edit-form">
       <%= f.label :Name %><br/>
