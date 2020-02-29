@@ -5,19 +5,10 @@
 <%= render 'layouts/notifications' %>
 
 <div class="container">
+  <%= render 'layouts/book_error_messages' %>
+  
   <div class="row">
     <div class="col-xs-3">
-      
-    <% if @book.errors.any? %>
-      <div id="error_explanation">
-        <ul>
-          <p class="error-message"><%= @book.errors.count %>errors prohibited this obj from being saved:</p>
-          <% @book.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
       
     <h3>User info</h3>
       <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %>
